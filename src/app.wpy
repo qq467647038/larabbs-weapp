@@ -45,7 +45,8 @@ export default class extends wepy.app {
   config = {
     pages: [
       'pages/index',
-      'pages/user'
+      'pages/user',
+      'pages/auth/login'
     ],
     window: {
       backgroundTextStyle: 'light',
@@ -77,14 +78,12 @@ export default class extends wepy.app {
   constructor () {
     super()
     this.use('requestfix')
-    this.use('promisify');
+    this.use('promisify')
   }
 
-  onLaunch() {
-     wepy.login().then(res => {
-      console.log('login: ', res)
-    })
-    this.testAsync()
+  async onLaunch() {
+    // WePY 中使用 Await
+    // let res = await wepy.login()
   }
 
   sleep (s) {
