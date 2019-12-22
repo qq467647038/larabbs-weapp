@@ -162,7 +162,7 @@
             },
             filePath: avatar
           })
-console.log(imageResponse)
+
           // 上传成功成功记录数据
           if (imageResponse.statusCode === 201) {
             // 小程序上传结果没有做 JSON.parse，需要手动处理
